@@ -7,7 +7,18 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
-
+    <Grid x:Name="LayoutRoot" Style="{StaticResource LayoutRootStyle}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!-- Back button and page title -->
+        <Grid x:Name="TitlePanel" Height="120" Margin="24">
+            <TextBlock x:Name="pageTitle" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+                       Text="SUPER DEV RESOURCE SAMPLE APP" Style="{StaticResource HeaderTextStyle}"/>
+        </Grid>
+        <StackPanel x:Name="ContentPanel" Grid.Row="1" Margin="24,0,24,0">
+            <Button Content="Custom Font Demo" Tapped="Button_Tapped"></Button>
+        </StackPanel>
     </Grid>
 </Page>

@@ -11,20 +11,24 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using WindowsStore.SamplePages;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace WindowsStore
+namespace WindowsStore.SamplePages
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class CustomFont : Page
     {
-        public MainPage()
+        public CustomFont()
         {
             this.InitializeComponent();
+            //Font Source: http://www.dafont.com/elegant-ink.font
+            //See http://blog.superdevresources.com/ for more free fonts
+            appTitle.FontFamily = new FontFamily("/Assets/Fonts/elegant_ink.ttf#Elegant Ink");
+            TodosListToday.ItemsSource = new String[] { "Car Wash", "Buy Groceries", "Complete Assignment" };
+            TodosListLater.ItemsSource = new String[] { "Buy Shoes", "Study for Exams", "Practice for tennis match" };
         }
 
         /// <summary>
@@ -34,11 +38,6 @@ namespace WindowsStore
         /// property is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-        }
-
-        private void Button_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(CustomFont));
         }
     }
 }
